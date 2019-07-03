@@ -1,0 +1,28 @@
+.form-container{
+    margin: auto
+}
+.form-container > *{
+    width: 100%;
+}
+button{
+    margin-top:1em;
+    margin-bottom: 0.5em;
+}
+mat-error{
+    margin: 0px 5px;
+    padding-bottom: 2px;
+}
+a.aceeptTnCLink{
+    color: #1e1e1e;
+    text-decoration: underline;
+}
+@media(min-width:1200px){
+    .container::after{
+        content: URL('../../../assets/imgs/pencil-cup-float.png');
+        position: absolute;
+        bottom: -10em;
+        right: -5em;
+        z-index: -1;
+        filter:brightness(1.4);
+    }
+}

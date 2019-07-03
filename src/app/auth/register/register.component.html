@@ -1,0 +1,67 @@
+<div class="row">
+  <div class="container" id="register-form">
+    <span class="italic small-text" style="position: absolute;right: 1em;top:-1em"><span style="color:red">*</span>Mandatory
+      Fields</span>
+    <h3 style="text-align: center;margin-bottom: 0.5em;" class="page-title side-icons">
+      Register</h3>
+    <div class="row" style="text-align:center;margin:auto">
+      <div class="form-container first-row">
+        <mat-form-field class="custom-input-style center-text" floatLabel="never">
+          <mat-label>Enter username</mat-label>
+          <input matInput type="text" [formControl]="username" id="txtUserName" (change)="isUsernameAvailable()"
+            maxlength="16" minlength="6" required />
+          <mat-error *ngIf="username.invalid">{{getErrorMessage('username')}}</mat-error>
+        </mat-form-field>
+        <mat-form-field class="custom-input-style center-text" floatLabel="never">
+          <mat-label>Your email ID</mat-label>
+          <input matInput type="email" id="boss" [formControl]="email" id='txtEmail' required />
+          <mat-error *ngIf="email.invalid">{{getErrorMessage('email')}}</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row second-row">
+      <mat-form-field floatLabel="never" class="col-6 col-md-6 col-lg-6 custom-input-style center-text">
+        <mat-label>Type password</mat-label>
+        <input matInput type="password" [formControl]="password" id="txtPass" required />
+        <mat-error *ngIf="password.invalid">{{getErrorMessage('password')}}</mat-error>
+      </mat-form-field>
+      <mat-form-field floatLabel="never" class="col-6 col-md-6 col-lg-6 custom-input-style center-text">
+        <mat-label>Retype password</mat-label>
+        <input matInput type="password" [formControl]="retypePassword" id="retype" required />
+        <mat-error *ngIf="retypePassword.invalid">{{getErrorMessage('retypePassword')}}</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="row third-row">
+      <mat-form-field floatLabel="never" class="col-6 col-md-4 col-lg-4 custom-input-style center-text">
+        <mat-label>Captcha</mat-label>
+        <input matInput type="text" />
+        <img matSuffix src="assets/icon/refresh_icon.png" alt="refresh-captcha" />
+      </mat-form-field>
+      <mat-form-field floatLabel="never" class=" col-6 col-md-4 col-lg-4 custom-input-style center-text">
+        <mat-label>Enter Captcha*</mat-label>
+        <input matInput type="text" />
+      </mat-form-field>
+      <mat-form-field floatLabel="never" class="col-md-4 col-lg-4 custom-input-style center-text">
+        <mat-label>Phone number</mat-label>
+        <input matInput type="number" id="mobile" [formControl]="phone" />
+        <mat-error *ngIf="phone.invalid">{{getErrorMessage('phone')}}</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="row" style="text-align: center">
+      <!--  <mat-checkbox color="primary" style="margin:3em auto">Accept Terms &amp; Conditions and Privacy Policy</mat-checkbox> -->
+      <input type="checkbox" class="custom_square_cb" id="aceeptTnC" [checked]="acceptTermsCheck" (change)="termsCheck()" />
+      <label class="custom_square_cb_label italic" for="aceeptTnC" >
+        <!--  Accept Terms &amp; Conditions and Privacy Policy -->
+        Accept
+        <a (click)="addto()" class="aceeptTnCLink">Terms &amp; Conditions</a> and
+        <a routerLink="" class="aceeptTnCLink">Privacy Policy</a>
+      </label>
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+        <button mat-flat-button color="primary" class="primary-btn" (click)="registrer()">Save &amp; Proceed</button>
+      </div>
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12" *ngIf="backregister">
+          <label mat-flat-button   (click)="back()">Back</label>
+        </div>
+    </div>
+  </div>
+</div>
