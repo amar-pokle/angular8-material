@@ -1,0 +1,100 @@
+<!-- <mat-drawer-container hasBackdrop="true">
+  <mat-drawer #drawer mode="Over">
+      <app-side-nav></app-side-nav> 
+  <mat-drawer-content> -->
+    <mat-toolbar style="background-color:#f5f5f5;">
+      <button  mat-icon-button (click)="drawer.toggle()"> 
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>
+        Settings
+      </span>
+      
+      </mat-toolbar>
+      
+      <div class="container px-3 setting-page" style="margin-top:25px;">
+      <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title >
+           Account
+          </mat-panel-title>
+          
+          </mat-expansion-panel-header>
+          <mat-list >
+              <p>
+                Manage information about you,your payments and your contacts, and your account in general.
+              </p>
+              <mat-list-item *ngFor="let i of accounts" > 
+                <mat-icon mat-list-icon>{{i.icon}}</mat-icon>
+                <h4 mat-line>{{i.name}}</h4>
+                <p mat-line> {{i.desc}} </p>
+                
+              </mat-list-item>
+              
+             
+              
+              
+            </mat-list>
+            
+      
+      </mat-expansion-panel>
+      
+      
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+          Privacy
+          </mat-panel-title>
+          
+        </mat-expansion-panel-header>
+        <mat-list>
+            <p>
+               Control whoo seens what you do on Facebook and how data helps us personalise experiences.
+              </p>
+            <mat-list-item *ngFor="let k of Privacys">
+              <mat-icon mat-list-icon>{{k.icon}}</mat-icon>
+              <h4 mat-line>{{k.name}}</h4>
+              <p mat-line> {{k.desc}} </p>
+              
+            </mat-list-item>
+            
+            
+          </mat-list>
+        
+      </mat-expansion-panel>
+      
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+           Notifications
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-list>
+            <p>
+               Decide how you want to communicate across Facebook and how you want us to conatct you.
+              </p>
+            <mat-list-item *ngFor="let noti of notifications">
+              <mat-icon mat-list-icon>{{noti.icon}}</mat-icon>
+              <h4 mat-line>{{noti.name}}</h4>
+              <p mat-line> {{noti.desc}} </p>
+              
+            </mat-list-item>
+      
+            
+          </mat-list>
+        
+      </mat-expansion-panel>
+      
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Log Out
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <!-- <p>hello helooojdjdddj</p> -->
+      </mat-expansion-panel>
+      </mat-accordion>
+      </div>
+      <!-- </mat-drawer-content>
+      </mat-drawer-container> -->
