@@ -1,0 +1,13 @@
+::placeholder {
+    color:#dfe6e9;
+    opacity: 80; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:#dfe6e9;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+   color: #dfe6e9;
+  }
+  
