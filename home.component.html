@@ -1,0 +1,89 @@
+
+<div class="container-fluid">
+  <div class="row">
+      <mat-toolbar class="mat-toolbar">
+              <!-- <div class="input-group mb-3 ">
+                    <div class="input-group-prepend">
+                       
+                      <input type="text" class="form-control" style="border: none; margin-top: 15px;background-color: #88a6bf" aria-label="Username" aria-describedby="basic-addon1">
+                    </div> -->
+      
+
+          <div class="input-group mb-3 ">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" style="border: none; margin-top: 15px;background-color: #88a6bf;color: #dfe6e9" id="basic-addon1"><img src="assets/icons/search.png"/></span>
+                  </div>
+                  <input type="text" class="form-control" style="border: none; margin-top: 15px;background-color: #88a6bf;color: white" aria-label="Username"  placeholder="Start typing here..."  aria-describedby="basic-addon1">
+                </div>
+          
+          <button mat-icon-button style="background: rgba(69,115,154,1); color: white;border: none;">
+              <mat-icon >menu</mat-icon>
+          </button>
+          <!-- <button mat-icon-button routerLink="/setting" style="background: rgba(69,115,154,1); color: white;border: none;">
+              <mat-icon >settings</mat-icon>
+          </button> -->
+      </mat-toolbar>
+
+  </div>
+</div>
+
+<div class="d-block">
+
+      <mat-tab-group id="home-tab-group">
+              <mat-tab label="PHOTOGRAPHY" >
+                  <div class="container">
+                      <h5 class="header" style="margin-top:10px;color: grey;"> Popular</h5>
+                      <owl-carousel [options]="carouselOptions" [items]="images" [carouselClasses]="['owl-theme','sliding']">
+                          <div class="item" *ngFor="let image of images;let i= index">
+                              <img class="slide-image"  src="{{image.image}}">
+                              <div class="slide-text" style="text-align: center">
+                                  <p>{{image.text}}</p>
+                              </div>
+                          </div>
+                      </owl-carousel>
+                  </div>
+                   <div class="container">
+                      <h5 class="header" style="margin-top:10px;color: grey;" >Whats New?</h5>
+                      <owl-carousel [options]="carouselOptions" [items]="images" [carouselClasses]="[ 'owl-theme','sliding']">
+                          <div class="item" *ngFor="let image of images;let i= index">
+                              <img class="slide-image"  src="{{image.image}}">
+                              <div class="slide-text" style="text-align: center">
+                                  <p>{{image.text}}</p>
+                              </div>
+                          </div>
+                      </owl-carousel>
+                  </div> 
+                  </mat-tab>
+                 
+     
+              <!-- <mat-tab label="MODELLING"> </mat-tab>
+              <mat-tab label="DESIGN"> </mat-tab>
+              <mat-tab label="MUSIC"> </mat-tab>
+              <mat-tab label="FILM"> </mat-tab>  -->
+              <mat-tab label="MODELLING">
+                  <div class="item" *ngFor="let i of myData">
+                      <p> {{i.category_name}}</p>
+                  </div>
+              </mat-tab>
+              <mat-tab label="DESIGN">
+                  <div class="item" *ngFor="let i of myData">
+                      <p> {{i.category_name}}</p>
+                  </div>
+              </mat-tab>
+              <mat-tab label="MUSIC">
+                  <div class="item" *ngFor="let i of myData">
+                      <p> {{i.category_name}}</p>
+                  </div>
+              </mat-tab>
+              <mat-tab label="FILM">
+                  <div class="item" *ngFor="let i of myData">
+                      <p> {{i.category_name}}</p>
+                  </div>
+              </mat-tab>
+
+
+
+          </mat-tab-group>
+
+</div>
+<app-footer class="app-footer"></app-footer>
